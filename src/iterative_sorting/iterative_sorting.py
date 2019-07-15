@@ -32,5 +32,13 @@ def bubble_sort(arr):
 
 # STRETCH: implement the Count Sort function below
 def count_sort(arr, maximum=-1):
+    count = {}
+    for i in len(arr):
+        pass
 
     return arr
+
+
+""" 
+    I accidentally pushed to master so this comment is gonna let me make my PR
+"""
