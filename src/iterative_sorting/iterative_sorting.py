@@ -32,11 +32,38 @@ def bubble_sort(arr):
 
 # STRETCH: implement the Count Sort function below
 def count_sort(arr, maximum=-1):
-    count = {}
-    for i in len(arr):
-        pass
 
-    return arr
+    if arr == []:
+        return arr
+    if min(arr) < 0:
+        return 'Error, negative numbers not allowed in Count Sort'
+
+    # container objects
+    spread = range(min(arr), max(arr)+1)
+    count = {}
+    # count = {key: 0 for key in range(min(arr), max(arr))}
+    # get our occurances
+    for i in arr:
+        occurs = count.get(i, 0) + 1
+        count[i] = occurs
+
+    # build out our positions
+    sum = 0
+    for key in spread:
+        # get the key and if its not present get 0
+        occurs = count.get(key, 0)
+        sum += occurs
+        count[key] = sum
+
+    # reassemble
+    sorted = []
+    total = 0
+    for key in spread:
+        while count[key] - total > 0:
+            sorted.append(key)
+            total += 1
+
+    return sorted
 
 
 """ 

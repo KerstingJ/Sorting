@@ -43,10 +43,11 @@ def merge_in_place(arr, start, mid, end):
             while c_index > a:
                 arr[c_index], arr[c_index-1] = arr[c_index-1], arr[c_index]
                 c_index -= 1
-
             b += 1
 
+        # everytime we put a piece of the array in order a needs to increment
         a += 1
+
     return arr
 
 
